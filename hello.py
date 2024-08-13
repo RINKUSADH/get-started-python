@@ -4,6 +4,7 @@ import atexit
 import os
 import json
 
+# It is using flask API in python
 app = Flask(__name__, static_url_path='')
 
 db_name = 'mydb'
@@ -13,6 +14,7 @@ db = None
 if 'VCAP_SERVICES' in os.environ:
     vcap = json.loads(os.getenv('VCAP_SERVICES'))
     print('Found VCAP_SERVICES')
+    print('Hello my name is Rinku.I am from Rajasthan.')
     if 'cloudantNoSQLDB' in vcap:
         creds = vcap['cloudantNoSQLDB'][0]['credentials']
         user = creds['username']
